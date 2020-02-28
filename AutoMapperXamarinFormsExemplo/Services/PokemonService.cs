@@ -9,9 +9,7 @@ using HttpExtension;
 
 namespace AutoMapperXamarinFormsExemplo.Services
 {
-    public class PokemonService     {         public async Task<List<Pokemon>> GetPokemonsAsync(int max = 20)         {
-            List<Pokemon> pokemons = new List<Pokemon>();
-
+    public class PokemonService     {         private string _Api = "https://pokeapi.co/api/v2/pokemon/";         public async Task<Pokemon> GetPokemon(int id)         {
             try
             {
                 var httpClient = new HttpClient();
@@ -19,30 +17,30 @@ namespace AutoMapperXamarinFormsExemplo.Services
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
 
-                string api = "https://pokeapi.co/api/v2/pokemon/";
+                string api = "";
 
-                for (int i = 1; i < max; i++)
+
+                var response = await httpClient.
+                    GetAsync<Pokemon>($"{_Api}{id}");
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    var response = await httpClient.
-                        GetAsync<Pokemon>($"{api}{i}");
-
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        pokemons.Add(response.Value);
-                    }
-                    else
-                    {
-                        Debug.WriteLine(response.Error.Message);
-                    }
-
+                    response.Value.Image = GetImageStreamFromUrl(response.Value.Sprites.FrontDefault.AbsoluteUri);
+                    return response.Value;
                 }
+                else
+                {
+                    Debug.WriteLine(response.Error.Message);
+                    return null;
+                }
+
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-            }
-
-            return pokemons;         }          public byte[] GetImageStreamFromUrl(string url)
+                return null;
+            }         }          public byte[] GetImageStreamFromUrl(string url)
         {
             try
             {

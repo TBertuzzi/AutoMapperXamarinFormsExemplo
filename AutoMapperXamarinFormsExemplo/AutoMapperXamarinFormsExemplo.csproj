@@ -14,6 +14,7 @@
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Xamarin.Helpers" Version="1.1.0" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -21,5 +22,6 @@
     <Folder Include="Services\" />
     <Folder Include="Models\" />
     <Folder Include="Converters\" />
+    <Folder Include="AutoMapper\" />
   </ItemGroup>
 </Project>

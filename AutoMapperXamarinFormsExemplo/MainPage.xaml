@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:c="clr-namespace:AutoMapperXamarinFormsExemplo.Converters"
-             xmlns:base="clr-namespace:AutoMapperXamarinFormsExemplo" 
+             xmlns:base="clr-namespace:AutoMapperXamarinFormsExemplo"
+             Padding="0,60,0,0"
              mc:Ignorable="d" x:Class="AutoMapperXamarinFormsExemplo.MainPage">
 
    <ContentPage.Resources>
@@ -13,19 +14,12 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-   <ListView HasUnevenRows="true"
-              IsRefreshing = "{Binding Ocupado}"
-              ItemsSource="{Binding Pokemons}"
-             CachingStrategy="RecycleElement" 
-              >
-        
-        <ListView.ItemTemplate>
-            
-            <DataTemplate>
-                
-                <ViewCell>
-                        <Grid Padding="20,30" >
+
+
+                        <Grid>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
@@ -40,7 +34,7 @@
                                    Source="{Binding Image, Converter={StaticResource imageFileCvt}}"
                                    Grid.Row="0"
                                    Grid.Column="0"
-                                   Grid.RowSpan ="2"/>
+                                   Grid.RowSpan ="3"/>
 
                            
                              <Label Grid.Row="0" 
@@ -53,15 +47,16 @@
                                    Text="{Binding Name}"
                                    FontSize="Large"
                                    TextColor="#FF5525"/>
+
+                            <Label Grid.Row="2" 
+                                   Grid.Column="1"
+                                   Text="{Binding Height,StringFormat='Peso: {0}'}"
+                                   FontSize="Large"
+                                   TextColor="#FF5525"/>
+
+                             <Button Text="Proximo" Grid.Column="0" Grid.Row="3" Command="{Binding ObterProximoPokemonCommand}"  />
                      
                         
                         </Grid>
-                </ViewCell>
-                
-            </DataTemplate>
-            
-        </ListView.ItemTemplate>
-        
-        
-    </ListView>
+
 </base:BaseView>

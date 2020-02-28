@@ -14,13 +14,11 @@ namespace AutoMapperXamarinFormsExemplo
     [DesignTimeVisible(false)]
     public partial class MainPage
     {
-        private MainViewModel ViewModel => BindingContext as MainViewModel;
-
         public MainPage()
         {
             InitializeComponent();
 
-            BindingContext = new MainViewModel();
+            BindingContext = new PokemonViewModel();
         }
     }
 }
