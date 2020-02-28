@@ -98,7 +98,7 @@ Agora em Nossa ViewModel basta chamar o AutoMapper, para isso implementei um ser
 Ao Executar temos o conteudo exibido na Tela.
 
 Recomendo ler a documentação do [AutoMapper](https://automapper.org/) para ver tudo que é possivel fazer com ele.
-E tambem o Mark ([Mark](https://mallibone.com/about)) escreveu um artigo bem 
+E tambem o Mark ([Mark Allibone](https://mallibone.com/about)) escreveu um artigo bem 
 legal sobre isso, e você pode conferir [Clicando Aqui](https://mallibone.com/post/xamarin-automapper/)
 
 Caso fique a duvida este repositorio tem um exemplo da implementação completa.
