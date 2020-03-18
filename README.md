@@ -108,4 +108,3 @@ Quer ver outros artigos sobre Xamarin ? [Clique aqui](https://github.com/TBertuz
 Espero ter ajudado!
 
 Aquele abraço!
-
