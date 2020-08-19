@@ -4,7 +4,7 @@ Exemplo de como utilizar AutoMapper com XamarinForms
 
 <img src="https://github.com/TBertuzzi/AutoMapperXamarinFormsExemplo/blob/master/Resources/automapper.png?raw=true" alt="Smiley face" >
 
-Vamos ao Nuget Instalar o [AutoMapper](https://www.nuget.org/packages/Plugin.AppShortcuts/) em todos os projetos.
+Vamos ao Nuget Instalar o [AutoMapper](https://www.nuget.org/packages/AutoMapper/) em todos os projetos.
 
 Em seguida existem algumas coisas q precisamos fazer. Antes de tudo para utilizar o AutoMapper precisamos configurar o arquivo do Linker em nossos projetos para que ele não remova algumas referencias importantes do AutoMapper :
 
